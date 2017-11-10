@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@*<a asp-action="DownloadReport">Download Report</a>
+  http://localhost:52364/Home/DownloadReport*@ 
+
+
+<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}
