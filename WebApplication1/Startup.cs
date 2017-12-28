@@ -30,9 +30,21 @@ namespace WebApplication1
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {         
-            
-            services.AddMvc();
+        {
+
+            /*
+            Because EF Core will automatically fix-up navigation properties, you can end up with cycles in your object graph. For example, Loading a blog and it's related posts will result in a blog object that references a collection of posts. Each of those posts will have a reference back to the blog.
+            Some serialization frameworks do not allow such cycles. For example, Json.NET will throw the following exception if a cycle is encoutered.
+            Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'Blog' with type 'MyApplication.Models.Blog'.
+            If you are using ASP.NET Core, you can configure Json.NET to ignore cycles that it finds in the object graph. This is done in the ConfigureServices(...) method in Startup.cs.
+            */
+
+
+            services.AddMvc()
+              .AddJsonOptions(
+               options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            ;
+
 
             SpreadsheetGear.Factory.SetSignedLicense("SpreadsheetGear.License, Type=Standard, Hash=WioEMdfC8fMSQEtq1vYoYCc, Product=NST, NewVersionsUntil=2018-09-21, Company=Inercya , Email=alberto.benito@i-nercya.com, Signature=jvCldFJmXfqVtvvRIxFawfQi6w/fldeOPFKu8O+59wA'-#ZXSVQYJucLxsS0czyA8cZ66+uy4Q9NvNUyP2bFDPvf4A#J");
 
@@ -94,8 +106,9 @@ namespace WebApplication1
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IStudentService, StudentService>();
 
-            
+
 
 
         }

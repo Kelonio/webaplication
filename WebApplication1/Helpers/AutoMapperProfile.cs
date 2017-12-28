@@ -10,7 +10,18 @@ namespace WebApplication1.Helpers
         {
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
+
+
+            CreateMap<Student, PersonDto>();
+            //CreateMap<Person, PersonDto>().Include<Student, PersonDto>().ForMember(o => o.FirstMidName, m => m.Ignore());
+            CreateMap<Person, PersonDto>().Include<Student, PersonDto>();
+
+           
+
+            CreateMap<Student, StudentDto>();
+            CreateMap<StudentDto, Student>();
         }
 
     }
 }
+

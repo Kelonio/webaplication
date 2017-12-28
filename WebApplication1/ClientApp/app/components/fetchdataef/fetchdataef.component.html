@@ -1,0 +1,66 @@
+<h1>Weather forecast</h1>
+
+<p>This component will demonstrates fetching data from the server with entity framework.</p>
+
+<!--<p *ngIf="!users"><em>Loading...</em></p>
+
+
+<table class='table' *ngIf="users">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{ user.userId }}</td>
+            <td>{{ user.userName }}</td>
+            <td>{{ user.userMail }}</td>
+        </tr>
+    </tbody>
+</table>-->
+
+<p *ngIf="!students"><em>Loading...</em></p>
+
+
+<table class='table' *ngIf="students">
+    <thead>
+        <tr>            
+            <th>LastName</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">           
+            <td>{{ student.lastName }}
+                  <ul *ngFor="let e of student.enrollment">
+                      <li>ID:{{ e.courseID}} Nombre:{{e.course.title}} Grade {{e.grade}} </li>
+                  </ul>
+            
+            </td>            
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<p *ngIf="!simpleStudents"><em>Simple Students Loading...</em></p>
+
+
+<table class='table' *ngIf="simpleStudents">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let simpleStudent of simpleStudents">
+            <td>{{ simpleStudent.nombre }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+

@@ -10,6 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
+import { FetchDataEFComponent } from './components/fetchdataef/fetchdataef.component';
+
+
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
@@ -31,6 +34,7 @@ import { AppConfig } from './app.config';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
+        FetchDataEFComponent,
         HomeComponent,
         LoggedHomeComponent,
         LoginComponent,
@@ -48,6 +52,7 @@ import { AppConfig } from './app.config';
             { path: 'logged-home', component: LoggedHomeComponent, canActivate: [AuthGuard]},
             { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'fetch-data-ef', component: FetchDataEFComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
