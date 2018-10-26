@@ -46,7 +46,7 @@ namespace WebApplication1
             ;
 
 
-            SpreadsheetGear.Factory.SetSignedLicense("SpreadsheetGear.License, Type=Standard, Hash=WioEMdfC8fMSQEtq1vYoYCc, Product=NST, NewVersionsUntil=2018-09-21, Company=Inercya , Email=alberto.benito@i-nercya.com, Signature=jvCldFJmXfqVtvvRIxFawfQi6w/fldeOPFKu8O+59wA'-#ZXSVQYJucLxsS0czyA8cZ66+uy4Q9NvNUyP2bFDPvf4A#J");
+            SpreadsheetGear.Factory.SetSignedLicense("******");
 
 
 
